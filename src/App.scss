@@ -1,0 +1,83 @@
+$breakpoint-tablet: 767px;
+$mobile-m: 375px;
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+  font-family: 'Roboto', -apple-system, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  &.navbar {
+    padding: 2rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    margin-right: 10%;
+  }
+
+  .search {
+    min-width: 290px;
+    margin-right: 10%;
+  }
+
+  .control-buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    .btn {
+      margin-right: 30px;
+    }
+  }
+}
+nav.sidebar {
+  z-index: 1000;
+  position: fixed;
+  left: 175px;
+  top: 110px;
+  bottom: 0px;
+  margin-left: -175px;
+  overflow-y: auto;
+  transition: all 0.5s ease;
+}
+
+.card {
+  padding: 1.25rem;
+  .card-title {
+    font-size: 2rem;
+  }
+}
+
+.btn.toggler {
+  display: none;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  nav {
+    .control-buttons {
+      margin-top: 2rem;
+    }
+    .search {
+      margin-top: 1rem;
+    }
+  }
+  .btn.toggler {
+    display: block;
+  }
+}
+
+@media (max-width: $mobile-m) {
+  nav {
+    .search {
+      min-width: 250px;
+    }
+  }
+}
